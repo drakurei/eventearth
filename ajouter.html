@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventEarth – Ajouter un évènement</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+    <link rel="shortcut icon" href="images/favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ========== EN-TÊTE ========== -->
+    <header>
+        <a href="index.html" class="logo">Event<span>Earth</span></a>
+        <nav aria-label="Navigation principale">
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="evenements.html">Les évènements</a></li>
+                <li><a href="ajouter.html">Ajouter un évènement</a></li>
+                <li><a href="contact.html">Nous contacter</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ========== CONTENU PRINCIPAL ========== -->
+    <main>
+        <div class="page-ajouter">
+
+        <h1>Ajouter un évènement</h1>
+        <p class="sous-titre">Partagez votre expérience avec la communauté EventEarth</p>
+        <p>Remplissez le formulaire ci-dessous pour soumettre votre évènement. Les champs marqués d'un <strong>*</strong> sont obligatoires.</p>
+
+        <div class="form-container">
+
+            <form id="form-evenement" onsubmit="return validerFormulaire()">
+
+                <!-- TITRE -->
+                <div class="form-group">
+                    <label for="titre">Titre de l'évènement <span class="required">*</span></label>
+                    <input type="text" id="titre" name="titre" placeholder="Ex : Festival de musique de Nantes">
+                    <p class="erreur" id="erreur-titre">⚠️ Veuillez saisir un titre pour votre évènement.</p>
+                </div>
+
+                <!-- TYPE -->
+                <div class="form-group">
+                    <label for="type">Catégorie <span class="required">*</span></label>
+                    <select id="type" name="type">
+                        <option value="">-- Choisissez une catégorie --</option>
+                        <option value="musique">Musique / Concert</option>
+                        <option value="sport">Sport</option>
+                        <option value="conference">Conférence</option>
+                        <option value="atelier">Atelier / Formation</option>
+                        <option value="culture">Culture / Arts</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                    <p class="erreur" id="erreur-type">⚠️ Veuillez sélectionner une catégorie.</p>
+                </div>
+
+                <!-- DATE -->
+                <div class="form-group">
+                    <label for="date">Date de l'évènement <span class="required">*</span></label>
+                    <input type="date" id="date" name="date">
+                    <p class="erreur" id="erreur-date">⚠️ Veuillez indiquer une date.</p>
+                </div>
+
+                <!-- LIEU -->
+                <div class="form-group">
+                    <label for="lieu">Lieu <span class="required">*</span></label>
+                    <input type="text" id="lieu" name="lieu" placeholder="Ex : Paris, Place de la République">
+                    <p class="erreur" id="erreur-lieu">⚠️ Veuillez indiquer le lieu de l'évènement.</p>
+                </div>
+
+                <!-- DESCRIPTION -->
+                <div class="form-group">
+                    <label for="description">Description <span class="required">*</span></label>
+                    <textarea id="description" name="description" placeholder="Décrivez votre évènement (programme, ambiance, public visé...)"></textarea>
+                    <p class="form-hint">Minimum 20 caractères.</p>
+                    <p class="erreur" id="erreur-description">⚠️ La description doit faire au moins 20 caractères.</p>
+                </div>
+
+                <!-- PHOTO -->
+                <div class="form-group">
+                    <label for="photo">Photo de l'évènement</label>
+                    <input type="file" id="photo" name="photo" accept="image/*">
+                    <p class="form-hint">Formats acceptés : JPG, PNG, WEBP. Taille max : 5 Mo.</p>
+                </div>
+
+                <!-- PRIX -->
+                <div class="form-group">
+                    <label for="prix">Prix (€) <span class="required">*</span></label>
+                    <input type="number" id="prix" name="prix" placeholder="0 si gratuit" min="0" step="0.01">
+                    <p class="form-hint">Saisissez 0 si l'évènement est gratuit.</p>
+                    <p class="erreur" id="erreur-prix">⚠️ Veuillez saisir un prix valide (0 ou plus).</p>
+                </div>
+
+                <button type="submit" class="btn-submit">🚀 Créer l'évènement</button>
+
+            </form>
+
+        </div>
+
+        </div>
+    </main>
+
+    <!-- ========== PIED DE PAGE ========== -->
+    <footer>
+        <nav class="footer-links" aria-label="Liens légaux">
+            <a href="mentions-legales.html">Mentions légales</a>
+            <a href="cgu.html">Conditions générales d'utilisation</a>
+        </nav>
+        <p>© 2025 EventEarth SAS — Tous droits réservés</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
